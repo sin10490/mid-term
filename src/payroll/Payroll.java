@@ -13,6 +13,15 @@ package payroll;
 public class Payroll 
 {
 
+    Payroll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+     public enum Name {Rahul,Abhishek,Sandip,Hardip,Raj};
+    
+    public enum Salary
+    {TwoThousand,ThirtyTwoHundered,TwentyFiveHundered,FourThousand,ThreeThousand  };
    public double Salary;
    public double bonus;
   public String emp;
@@ -20,13 +29,43 @@ public class Payroll
      /**constructor that takes the salary and employee name
       * 
       */
-   public Payroll(double Sal,String givenUser)
-        {
-            Salary=Sal;
-            emp=givenUser;
-                 
-        }
-      
+    Payroll(Name n, Salary s) {
+        setEmp(n);
+        setSalary(s);
+       
+    }
+
+    public double getSalary() {
+        return Salary;
+    }
+
+    public void setSalary(Salary s) {
+        this.Salary = Salary;
+    }
+
+    public String getEmp() {
+        return emp;
+    }
+
+    public void setEmp(Name n) {
+        this.emp = emp;
+    }
+    
+   public void bonus()
+   {
+       if(Salary<=3000)
+       {
+           Salary=Salary*10/100+Salary;
+       }
+       else 
+       {
+           this.Salary=Salary;
+       }
+   }
+      public String toString()
+      {
+          return "Emp name=" emp+"Salary="+Salary;
+      }
      
     
     
